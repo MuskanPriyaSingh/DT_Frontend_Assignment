@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Thought Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-content">
+            <img class="logo" src="/assets/icons/logo-1.png" alt="Deep Thought logo">
+
+            <div class="tools">
+                <img src="/assets/icons/home.png" alt="home">
+                <img src="/assets/icons/settings.png" alt="settings">
+                <img src="/assets/icons/notification.png" alt="notifications">
+
+                <!-- Profile icon -->
+                <div id="upload-img" class="profile-img" title="You">
+                    <!-- optional image; fallback is gray circle -->
+                    <input type="file" id="profileInput" accept="image/*" style="display:none;">
+                </div>
+                <div class="three-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        
+        <!-- Left Sidebar -->
+        <div class="left-sidebar" id="leftSidebar">
+    
+            <!-- collapsed header -->
+            <div class="journey-board collapsed-header" id="collapsedHeader">
+                <img id="toggleArrow" src="/assets/icons/left-arrow.png" alt="">
+            </div>
+
+            <!-- expanded header -->
+            <div class="journey-board expanded-header hidden" id="expandedHeader">
+                <span>Journey Board</span>
+                <img id="closeArrow" src="/assets/icons/right-arrow.png" alt="">
+            </div>
+
+            <!-- menu -->
+            <div id="journeyMenu" class="journey-menu hidden">
+                <h4>Explore the world of management</h4>
+                <ul id="menuList"></ul>
+            </div>
+
+            <div class="left-sidebar-content">
+                <span>1</span>
+            </div>
+
+        </div>
+        
+        <!-- Middle content -->
+        <main class="middle">
+            <div class="page-header">
+                <h2>
+                    Technical Project Management
+                </h2>
+                <button class="submit-btn">Submit Task</button>
+            </div>
+
+            <section class="hero">
+                <h3 id="taskTitle"></h3>
+                <p id="taskDescription"></p>
+            </section>
+            
+            <div class="grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="assetTitle"></h3>
+                        <img src="/assets/icons/information.png" alt="">
+                    </div>
+                    <p class="assetDescription"></p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="assetTitle"></h3>
+                        <img src="/assets/icons/information.png" alt="">
+                    </div>
+                    <p class="assetDescription"></p>
+                    <div class="thread-title">
+                        <img src="/assets/icons/up-arrow.png" alt="">
+                        <h4>Thread A</h4>
+                    </div>
+                    <div class="thread-content">
+                        <div class="sub-thread">
+                            <div style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); background-color: #f0f0f0; padding-top: 4px;">
+                                <label>Sub Thread 1</label>
+                                <textarea placeholder="Enter Text Here" rows="4"></textarea>
+                            </div>
+                            <div class="icon-group">
+                                <img src="/assets/icons/idea.png" alt="idea">
+                                <img src="/assets/icons/messsage.png" alt="message">
+                                <img src="/assets/icons/support.png" alt="support">
+                                <img src="/assets/icons/vector.png" alt="vector">
+                            </div>
+                        </div>
+                        <div class="sub-thread">
+                            <div style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); background-color: #f0f0f0; padding-top: 4px;">
+                                <label>Sub Interpretation 1</label>
+                            <textarea placeholder="Enter Text Here" rows="4"></textarea>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <button class="dropdown-btn">Select Categ <img src="/assets/icons/down-arrow.png" alt="dropdown"></button>
+                                <button class="dropdown-btn">Select Proces <img src="/assets/icons/down-arrow.png" alt="dropdown"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-subthread"><img src="/assets/icons/add.png" alt=""> Sub-thread</button>
+                    <div style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); background-color: #f0f0f0; margin: 22px 28px; padding-top: 4px;">
+                        <label>Summary for Thread A</label>
+                        <textarea placeholder="Enter Text Here" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="assetTitle"></h3>
+                        <img src="/assets/icons/information.png" alt="">
+                    </div>
+                    <p class="assetDescription"></p>
+                    <hr style="height: 3px; background-color: #d9d9d9; border: none;">
+                    <div class="form">
+                        <label>Title</label>
+                        <input type="text">
+
+                        <label>Content</label>
+                        <div style="border:1px solid #ddd; border-radius:10px; padding:10px;">
+                            <div style="display:flex; gap:12px; margin-bottom:10px; font-size:13px;">
+                                <span>File</span><span>Edit</span><span>View</span><span>Insert</span><span>Format</span><span>Tools</span><span>Table</span><span>Help</span>
+                            </div>
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <img src="/assets/icons/undo.png" alt="undo">
+                                <img src="/assets/icons/redo.png" alt="redo">
+                                <img src="/assets/icons/expand.png" alt="expand">
+                                <span style="background-color: #c6c5c5; padding-right: 20px;">paragraph</span>
+                                <div class="three-dots" style="flex-direction: row; gap: 1px; ">
+                                    <span style="background-color:#8d8a8a;"></span>
+                                    <span style="background-color:#8d8a8a;"></span>
+                                    <span style="background-color:#8d8a8a;"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <textarea style="margin: 0px; border: none; border-left: 3px solid #d9d9d9; border-radius: 0px;" rows="9"></textarea>
+                    </div>
+                </div>
+
+                <!-- Card 4  -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="assetTitle"></h3>
+                        <img src="/assets/icons/information.png" alt="">
+                    </div>
+                    <p class="assetDescription"></p>
+                    <hr style="height: 3px; background-color: #d9d9d9; border: none;">
+                    <div class="thread-title" style="margin: 0 28px; border: none; background-color: #e9e9e9;">
+                        <img src="/assets/icons/up-arrow.png" alt="arrow">
+                        <h4>Introduction</h4>
+                    </div>
+                    
+                    <p style="margin: 22px 28px; padding: 0 16px;">The 4SA Method, How to bring a idea into process? </p>
+                    <a href="#" style="color:#8d8a8a; font-size:14px; font-weight: 700; text-decoration: none; margin: 22px 28px; display: block; text-align: end;">See more</a>
+                    
+                    <div class="thread-title" style="margin: 0 28px; border: 2px solid #e9e9e9;">
+                        <img src="/assets/icons/up-arrow.png" alt="arrow">
+                        <h4>Thread A</h4>
+                    </div>
+                    <p style="margin: 22px 28px; padding: 0 16px;">How are you going to develop your strategy ? Which method are you going to use to develop a strategy? What if the project is lengthy?</p>
+                    <a href="#" style="color:#8d8a8a; font-size:14px; font-weight: 700; text-decoration: none; margin: 22px 28px; display: block; text-align: end;">See more</a>
+                    <div class="thread-title" style="margin: 0 28px 8px 78px; border: 2px solid #e9e9e9;">
+                        Example 1
+                    </div>
+                    <p style="margin: 0 78px;">You have a concept, How will you put into progress ?</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="notice-board">
+                <img src="/assets/icons/cross.png" alt="close">
+                <span>Notice Board</span> 
+            </div>
+        </aside>
+    </div>
+
+    <!-- Bottom-right FABs -->
+    <div class="fab">
+        <div>
+            <img src="/assets/icons/help.png" alt="help">
+        </div>
+        <div>
+            <img src="/assets/icons/meeting.png" alt="meeting">
+        </div>
+        <div>
+            <img src="/assets/icons/schedule.png" alt="schedule">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="/data/assets.js"></script>
+
+</body>
+</html>
